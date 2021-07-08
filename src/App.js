@@ -61,7 +61,7 @@ function App() {
             </div>
           ))}
         </div>
-        <button onClick={() => setModal("newvehicle")}>Add Car</button></div>
+        <button onClick={() => setModal("newvehicle")}>Add Vehicle</button></div>
     </div>
   );
 }
