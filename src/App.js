@@ -37,7 +37,6 @@ function App() {
         <div className="inner">
           <div>
             <input
-              id
               type="text"
               placeholder="Filter by model"
               onChange={(e) => setSearch(e.target.value)}

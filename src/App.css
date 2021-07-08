@@ -184,3 +184,12 @@ p {
   background: white;
   padding: 20px;
 }
+
+@media only screen and (max-width: 768px) {
+  select {
+    font-size: 13px;
+  }
+  input {
+    font-size: 13px;
+  }
+}
