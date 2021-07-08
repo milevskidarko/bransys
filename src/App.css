@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("./assets/car.jpg");
 }
 
 .box {
@@ -17,6 +18,8 @@
 
 #app {
   box-shadow: 2px 5px 12px -1px rgb(0 0 0 / 56%);
+  border-radius: 20px;
+  background-color: white;
   padding: 20px;
   width: 50%;
   margin: 15px auto;
@@ -30,16 +33,15 @@ input {
   font-size: 1.25rem;
   line-height: 1.1;
   background-color: transparent;
-
 }
 
 ::placeholder {
-  color: white;
+  color: black;
   opacity: 1;
 }
 
 #search ::placeholder {
-  color: white !important;
+  color: black !important;
   opacity: 1;
 }
 
@@ -51,7 +53,7 @@ select {
   cursor: pointer;
   line-height: 1.1;
   background-color: transparent;
-  color: white;
+  color: black;
 }
 
 option {
@@ -71,7 +73,7 @@ li {
   margin: 0 auto;
   background-color: transparent;
   list-style: none;
-  color: white;
+  color: black;
 }
 
 button {
@@ -101,24 +103,33 @@ button:hover {
   margin-right: 10px;
 }
 
-.firstDiv {
+.carWrapper {
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
+  border-bottom: 1px solid #ddd;
   margin-bottom: 10px;
 }
 
 p {
   margin: 0;
+  font-weight: 700;
 }
 
 .inner {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
-
+.inner div {
+  flex-basis: 50%;
+}
+.inner div input {
+  width: 70%;
+}
+.inner div select {
+  width: 70%;
+}
 .secondLiPage {
   display: flex;
   align-items: center;
@@ -165,7 +176,7 @@ p {
   bottom: 0px;
   position: absolute;
   z-index: 999;
-  background: rgba(0, 0, 0, .8);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .modal {

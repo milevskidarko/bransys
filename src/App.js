@@ -29,35 +29,40 @@ function App() {
   }, [search, cars, filter]);
 
   return (
-    <div className="bgImage" style={{ backgroundImage: "url(car.jpg)" }} >
+    <div className="bgImage">
       {modal && modal === "newvehicle" ?
         <ShowCars vehicles={cars} setModal={setModal} setVehicles={setCars} />
         : null}
       <div id="app">
         <div className="inner">
-
-          <input
-            id
-            type="text"
-            placeholder="Filter by model"
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <select onChange={e => setFilter(e.target.value)}>
-            <option value="model">Filter by Modal</option>
-            <option value="vehicleType">Filter by Type</option>
-            <option value="plateNumber">Filter by Number</option>
-            <option value="vehicleName">Filter by Name</option>
-          </select>
-        </div>
-        {filteredCars.map((car, idx) => (
-          <div key={idx} className='firstDiv'>
-            <Car  {...car} vehicles={vehicles} />
-            <div>
-              <button className='del' onClick={(e) => deleteItem(e)}>Delete</button>
-            </div>
+          <div>
+            <input
+              id
+              type="text"
+              placeholder="Filter by model"
+              onChange={(e) => setSearch(e.target.value)}
+            />
           </div>
-        ))}
-        <button onClick={() => setModal("newvehicle")}>Submit</button></div>
+          <div>
+            <select onChange={e => setFilter(e.target.value)}>
+              <option value="model">Filter by Modal</option>
+              <option value="vehicleType">Filter by Type</option>
+              <option value="plateNumber">Filter by Number</option>
+              <option value="vehicleName">Filter by Name</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          {filteredCars.map((car, idx) => (
+            <div key={idx} className='carWrapper'>
+              <Car  {...car} />
+              <div>
+                <button className='del' onClick={(e) => deleteItem(e)}>Delete</button>
+              </div>
+            </div>
+          ))}
+        </div>
+        <button onClick={() => setModal("newvehicle")}>Add Car</button></div>
     </div>
   );
 }
